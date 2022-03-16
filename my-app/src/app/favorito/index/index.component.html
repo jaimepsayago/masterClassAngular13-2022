@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Angular 13 CRUD - JSH</h1>
+   
+    <a href="#" routerLink="/favorito/create/" class="btn btn-primary">Create New Favorito</a>
+     
+    <table class="table table-bordered">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th width="220px">Action</th>
+      </tr>
+      <tr *ngFor="let f of favorito">
+        <td>{{ f._id}}</td>
+        <td>{{ f.title }}</td>
+        <td>{{ f.description }}</td>
+        <td>
+          <a href="#" [routerLink]="['/favorito/', f._id, 'view']" class="btn btn-link">View</a>
+          <a href="#" [routerLink]="['/favorito/', f._id, 'edit']" class="btn btn-link">Edit</a>
+          <button type="button" (click)="deletePost(f._id)" class="btn btn-link">Delete</button>
+        </td>
+      </tr>
+    </table>
+ </div>
